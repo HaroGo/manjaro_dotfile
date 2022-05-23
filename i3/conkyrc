@@ -1,0 +1,32 @@
+out_to_x no
+out_to_console yes
+background no
+double_buffer no
+update_interval 1
+total_run_times 0
+override_utf8_locale no
+short_units yes
+if_up_strictness address
+cpu_avg_samples 2
+
+TEXT
+[
+#{ "full_text" : "", "color": "\#BADA55"},
+#{ "full_text": " ${exec curl icanhazip.com}"},
+# 窗口标题
+{ "full_text": "[${exec sh $HOME/.config/i3/script/getWindowClass.sh}]"},
+{ "full_text" : ${if_up enp2s0}"  ${upspeed enp2s0}/s  ${downspeed enp2s0}/s"${else}""${endif}, "color" : "\#FFFFFF" },
+# 网速
+{ "full_text" : ${if_up wlp3s0}"  ${upspeed wlp3s0}/s  ${downspeed wlp3s0}/s"${else}""${endif}, "color" : "\#FFFFFF" },
+# v2ray 状态
+{ "full_text": "${exec sh $HOME/.config/i3/script/getProxyStatus.sh} "},
+# { "full_text" : "[${mpd_smart}]${mpd_bar}", "color": "\#BADA55"},
+{ "full_text" : "CPU: ${cpu cpu0}%" , "color" : "\#FFFFFF" },
+{ "full_text" : "Mem: ${mem}" , "color" : "\#FFFFFF" },
+{ "full_text" : "FS Usage: ${fs_used_perc /}%" , "color" : "\#FFFFFF" },
+{ "full_text" : "  ${battery_percent}%" , "color" : "\#FFFFFF" },
+{ "full_text" : " ${time %Y/%m/%d %a}" , "color" : "\#FFFFFF" },
+{ "full_text" : " ${time %H:%M}" , "color" : "\#FFFFFF" }
+],
+
+

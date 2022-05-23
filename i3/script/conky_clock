@@ -1,0 +1,22 @@
+conky.config = {
+	alignment = 'middle_middle',
+	background = true,
+	color2 = '777777',
+	cpu_avg_samples = 2,
+	default_color = 'FFFFFF',
+	double_buffer = true,
+	font = 'Bitstream Vera Sans:size=8',
+	gap_x = 25,
+	gap_y = 13,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 1.0,
+	use_xft = true,
+}
+conky.text = [[
+$color${font Noto Sans Mono:size=60}${time %H:%M}$font$color2
+${voffset 10}$alignc$color${font WenQuanYi Zen Hei:size=20}${time %Y-%m-%d}$font$color2
+]]
